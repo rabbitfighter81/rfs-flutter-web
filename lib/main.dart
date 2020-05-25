@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.deepPurple,
-        accentColor: Colors.deepPurpleAccent,
+        accentColor: Colors.tealAccent,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -100,8 +100,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: <Color>[
-                  Colors.deepPurpleAccent,
-                  Colors.deepPurple,
+                  Color.fromRGBO(0, 0, 0, .66),
+                  Color.fromRGBO(0, 0, 0, .33),
                 ],
               ),
             ),
@@ -109,6 +109,21 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(28.0),
         child: MyStatelessWidget(),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0, // this will be set when a new tab is tapped
+        items: [
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.home),
+            title: new Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: new Icon(Icons.mail),
+            title: new Text('Messages'),
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person), title: Text('Profile'))
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
