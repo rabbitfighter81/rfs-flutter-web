@@ -108,7 +108,15 @@ class _MyHomePageState extends State<MyHomePage> {
           )),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
-        child: MyStatelessWidget(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            MyStatelessWidget(),
+            CenteredWidget(
+              counter: 0,
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0, // this will be set when a new tab is tapped
